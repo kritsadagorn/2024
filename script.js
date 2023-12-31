@@ -21,7 +21,8 @@ const x = setInterval(function() {
     countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
   } else {
     clearInterval(x);
-    countdownElement.innerHTML = "Happy New Year 2024! Thank you for this year na babe";
+    countdownElement.innerHTML = "Happy New Year 2024!";
+    startFireworks();
   }
 }, 1000);
 
