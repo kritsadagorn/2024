@@ -1,49 +1,26 @@
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background: linear-gradient(to bottom, #1c1c1c, #383838);
-  color: #fff;
-}
+// Set the date we're counting down to
+const countDownDate = new Date("January 1, 2024 00:00:00").getTime();
 
-.container {
-  text-align: center;
-}
+// Update the countdown every 1 second
+const x = setInterval(function() {
+  // Get the current date and time
+  const now = new Date().getTime();
 
-h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
-}
+  // Calculate the remaining time
+  const distance = countDownDate - now;
 
-#countdown {
-  font-size: 2em;
-  color: #ffea00; /* Yellow color for the countdown */
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-  padding: 10px;
-  border-radius: 10px;
-}
+  // Calculate days, hours, minutes, and seconds
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-.scrolling-text {
-  font-size: 1.5em;
-  color: #00ff00; /* Green color for the scrolling text */
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.scrolling-text span {
-  display: inline-block;
-  padding-left: 100%;
-  animation: marquee 10s linear infinite;
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(100%);
+  // Display the countdown
+  const countdownElement = document.getElementById("countdown");
+  if (distance > 0) {
+    countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  } else {
+    clearInterval(x);
+    countdownElement.innerHTML = "Happy New Year 2024! Thank you for this year na babe";
   }
-  to {
-    transform: translateX(-100%);
-  }
-}
+}, 1000);
