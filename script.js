@@ -23,7 +23,7 @@ const x = setInterval(function () {
   } else {
     // If it's past the countdown time, clear the interval and trigger fireworks
     clearInterval(x);
-    document.getElementById("countdown").innerHTML = "Happy New Year 2024!";
+    document.getElementById("countdown").innerHTML = "Happy New Year 2024! NAKA BABE";
     startFireworks();
   }
 }, 1000);
