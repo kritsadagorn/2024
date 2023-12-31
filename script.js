@@ -24,3 +24,8 @@ const x = setInterval(function() {
     countdownElement.innerHTML = "Happy New Year 2024! Thank you for this year na babe";
   }
 }, 1000);
+
+function startFireworks() {
+  // Trigger the fireworks effect
+  particlesJS.load("particles-js", "particles-config.js");
+}
